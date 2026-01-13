@@ -69,41 +69,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section id="case-studies" className="section-padding">
-        <div className="container">
-          <SectionHeading title="Case Studies" subtitle="Deep Dives Into Problems" />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-            {portfolioData.caseStudies.map((study, index) => (
-              <motion.div
-                key={study.id}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="glass"
-                style={{
-                  display: 'flex',
-                  flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
-                  minHeight: '400px',
-                  overflow: 'hidden',
-                  width: '100%'
-                }}
-              >
-                <div style={{ flex: 1, position: 'relative' }}>
-                  <img src={study.image} alt={study.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ flex: 1, padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <h3 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{study.title}</h3>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', marginBottom: '2rem' }}>{study.description}</p>
-                  <a href={study.link} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, textTransform: 'uppercase' }}>
-                    Read Case Study <ExternalLink size={16} />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Blogs Section */}
       <section id="blogs" className="section-padding">

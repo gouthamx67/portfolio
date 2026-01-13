@@ -29,15 +29,7 @@ export const portfolioData = {
             tags: ["Next.js", "MongoDB", "Tailwind"],
         },
     ],
-    caseStudies: [
-        {
-            id: "1",
-            title: "Scaling a Fintech App",
-            description: "How we optimized a banking application to handle 1M+ concurrent users.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-            link: "#",
-        },
-    ],
+
     blogs: [
         {
             id: "1",
