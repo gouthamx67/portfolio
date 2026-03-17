@@ -22,10 +22,10 @@ export const portfolioData = {
         },
         {
             id: "2",
-            title: "E-Commerce Dashboard",
-            description: "A comprehensive dashboard for managing sales, inventory, and customers.",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-            link: "https://github.com",
+            title: "Ritual - beyond a Habit Tracker",
+            description: "Ritual is a high-performance, mobile-first habit tracker built with Next.js 15, Prisma, and Tailwind CSS v4.",
+            image: "/ritual.png",
+            link: "https://github.com/gouthamx67/Ritual",
             tags: ["Next.js", "MongoDB", "Tailwind"],
         },
     ],
@@ -33,10 +33,9 @@ export const portfolioData = {
     blogs: [
         {
             id: "1",
-            title: "The Future of AI in Web Development",
-            date: "Oct 24, 2025",
-            excerpt: "Exploring how LLMs are changing the way we write code and build interfaces.",
-            link: "#",
+            title: "Not Hacked — Misclassified",
+            excerpt: "Broken trust signals triggered the malicious flag. Fixing OAuth, domain verification, and compliance restored trust.",
+            link: "https://www.linkedin.com/feed/update/urn:li:activity:7427236210273681409/",
         },
     ],
     socials: [
