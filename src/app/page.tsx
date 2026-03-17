@@ -94,7 +94,7 @@ export default function Home() {
                 }}
               >
                 <div style={{ flex: 1 }}>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{blog.date}</span>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Blog</span>
                   <h4 style={{ fontSize: '2rem', marginTop: '0.5rem', marginBottom: '0.5rem' }}>{blog.title}</h4>
                   <p style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}>{blog.excerpt}</p>
                 </div>
