@@ -50,11 +50,11 @@ export const portfolioData = {
         },
         {
             id: "2",
-            title: "Ritual - beyond a Habit Tracker",
-            description: "Ritual is a high-performance, mobile-first habit tracker built with Next.js 15, Prisma, and Tailwind CSS v4.",
-            image: "/ritual.png",
+            title: "AI Gym Trainer",
+            description: "AI Gym Trainer corrects your workout form in real time using camera-based pose detection, and suggests personalized corrections to help you train safely and effectively.",
+            image: "/image.png",
             link: "https://github.com/gouthamx67/Ritual",
-            tags: ["Next.js", "MongoDB", "Tailwind"],
+            tags: ["AI", "Pose Detection", "Computer Vision"],
         },
     ],
 
