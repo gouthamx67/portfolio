@@ -53,7 +53,7 @@ export const portfolioData = {
             title: "AI Gym Trainer",
             description: "AI Gym Trainer corrects your workout form in real time using camera-based pose detection, and suggests personalized corrections to help you train safely and effectively.",
             image: "/image.png",
-            link: "https://github.com/gouthamx67/Ritual",
+            link: "https://github.com/gouthamx67/ai-gym-trainer",
             tags: ["AI", "Pose Detection", "Computer Vision"],
         },
     ],
