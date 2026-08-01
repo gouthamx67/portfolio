@@ -53,6 +53,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section id="experience" className="section-padding">
+        <div className="container">
+          <SectionHeading title="Experience" subtitle="Where I've Worked" />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            {portfolioData.experience.map(exp => (
+              <motion.div
+                key={exp.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="glass"
+                style={{ padding: '2.5rem 2rem', borderRadius: '16px' }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontSize: '1.6rem' }}>{exp.role}</h3>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{exp.period}</span>
+                </div>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+                  {exp.company} | {exp.location}
+                </p>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingLeft: '1.25rem' }}>
+                  {exp.highlights.map((highlight, i) => (
+                    <li key={i} style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{highlight}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="section-padding">
+        <div className="container">
+          <SectionHeading title="Education" subtitle="My Academic Journey" />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            {portfolioData.education.map(edu => (
+              <motion.div
+                key={edu.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="glass"
+                style={{ padding: '2.5rem 2rem', borderRadius: '16px' }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontSize: '1.6rem' }}>{edu.degree}</h3>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{edu.period}</span>
+                </div>
+                <p style={{ color: 'var(--text-secondary)' }}>
+                  {edu.school} | {edu.location}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="section-padding">
         <div className="container">
@@ -144,6 +205,14 @@ export default function Home() {
             >
               {portfolioData.socials.find(s => s.name === 'Email')?.url.replace('mailto:', '')}
             </a>
+          </div>
+          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              📞 {portfolioData.contact.phone}
+            </p>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              📍 {portfolioData.contact.location}
+            </p>
           </div>
         </div>
       </section>

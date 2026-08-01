@@ -5,8 +5,9 @@ import Link from "next/link";
 export default function Navbar() {
     const navItems = [
         { name: "Skills", href: "#skills" },
+        { name: "Experience", href: "#experience" },
+        { name: "Education", href: "#education" },
         { name: "Projects", href: "#projects" },
-        { name: "Blogs", href: "#blogs" },
         { name: "Contact", href: "#contact" },
     ];
 
