@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .page {
   --background: #fafafa;
   --foreground: #fff;
@@ -27,6 +31,9 @@
   justify-content: space-between;
   background-color: var(--foreground);
   padding: 120px 60px;
+  @media (max-width: 768px) {
+    padding: 48px 24px;
+  }
 }
 
 .intro {
@@ -45,6 +52,12 @@
   letter-spacing: -2.4px;
   text-wrap: balance;
   color: var(--text-primary);
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.92px;
+    max-width: 100%;
+  }
 }
 
 .intro p {
@@ -53,6 +66,11 @@
   line-height: 32px;
   text-wrap: balance;
   color: var(--text-secondary);
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 28px;
+    max-width: 100%;
+  }
 }
 
 .intro a {
@@ -67,6 +85,10 @@
   max-width: 440px;
   gap: 16px;
   font-size: 14px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    max-width: 100%;
+  }
 }
 
 .ctas a {

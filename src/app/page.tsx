@@ -17,7 +17,7 @@ const iconMap: any = {
 
 export default function Home() {
   return (
-    <main>
+    <main className="page">
       <Navbar />
 
       <Hero
@@ -30,19 +30,21 @@ export default function Home() {
       <section id="skills" className="section-padding">
         <div className="container">
           <SectionHeading title="Skills" subtitle="My Technical Expertise" />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+          <div className="skills-grid">
             {Object.entries(portfolioData.skills).map(([category, skills]) => (
-              <div key={category}>
+              <div key={category} style={{ marginBottom: '2rem' }}>
                 <h3 style={{
                   fontSize: '1.2rem',
                   textTransform: 'uppercase',
                   color: 'var(--text-secondary)',
-                  marginBottom: '1.5rem',
-                  letterSpacing: '0.1em'
+                  marginBottom: '1rem',
+                  letterSpacing: '0.1em',
+                  borderBottom: '1px solid var(--card-border)',
+                  paddingBottom: '0.5rem'
                 }}>
                   {category}
                 </h3>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
                   {(skills as string[]).map((skill, index) => (
                     <SkillBadge key={index} name={skill} />
                   ))}
@@ -57,7 +59,7 @@ export default function Home() {
       <section id="experience" className="section-padding">
         <div className="container">
           <SectionHeading title="Experience" subtitle="Where I've Worked" />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="experience-list">
             {portfolioData.experience.map(exp => (
               <motion.div
                 key={exp.id}
@@ -66,7 +68,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="glass"
-                style={{ padding: '2.5rem 2rem', borderRadius: '16px' }}
+                style={{ padding: '2rem', borderRadius: '16px', marginBottom: '2rem' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '0.5rem' }}>
                   <h3 style={{ fontSize: '1.6rem' }}>{exp.role}</h3>
@@ -90,7 +92,7 @@ export default function Home() {
       <section id="education" className="section-padding">
         <div className="container">
           <SectionHeading title="Education" subtitle="My Academic Journey" />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="education-list">
             {portfolioData.education.map(edu => (
               <motion.div
                 key={edu.id}
@@ -99,7 +101,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="glass"
-                style={{ padding: '2.5rem 2rem', borderRadius: '16px' }}
+                style={{ padding: '2rem', borderRadius: '16px', marginBottom: '2rem' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '0.5rem' }}>
                   <h3 style={{ fontSize: '1.6rem' }}>{edu.degree}</h3>
@@ -118,11 +120,7 @@ export default function Home() {
       <section id="projects" className="section-padding">
         <div className="container">
           <SectionHeading title="Selected Projects" subtitle="Building Digital Experiences" />
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-            gap: '2rem'
-          }}>
+          <div className="projects-grid">
             {portfolioData.projects.map(project => (
               <ProjectCard key={project.id} {...project} />
             ))}
@@ -131,12 +129,11 @@ export default function Home() {
       </section>
 
 
-
       {/* Blogs Section */}
       <section id="blogs" className="section-padding">
         <div className="container">
           <SectionHeading title="Blogs" subtitle="Sharing My Thoughts" />
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {portfolioData.blogs.map(blog => (
               <motion.a
                 href={blog.link}
@@ -148,16 +145,17 @@ export default function Home() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '2.5rem 2rem',
+                  padding: '2rem',
                   borderBottom: '1px solid var(--card-border)',
                   borderRadius: '12px',
-                  transition: 'background-color 0.3s ease'
+                  transition: 'background-color 0.3s ease',
+                  flexDirection: 'column'
                 }}
               >
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
                   <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Blog</span>
                   <h4 style={{ fontSize: '2rem', marginTop: '0.5rem', marginBottom: '0.5rem' }}>{blog.title}</h4>
-                  <p style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}>{blog.excerpt}</p>
+                  <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', fontSize: '1rem' }}>{blog.excerpt}</p>
                 </div>
                 <div className="glass" style={{ width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <ExternalLink size={20} />
@@ -172,7 +170,7 @@ export default function Home() {
       <section id="contact" className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
           <SectionHeading title="Get In Touch" subtitle="Let's Build Something Great" />
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
             {portfolioData.socials.map(social => {
               const Icon = iconMap[social.icon] || Mail;
               return (
@@ -182,31 +180,32 @@ export default function Home() {
                   whileHover={{ y: -5, scale: 1.1 }}
                   className="glass"
                   style={{
-                    width: '80px',
-                    height: '80px',
+                    width: '60px',
+                    height: '60px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderRadius: '50%'
+                    borderRadius: '50%',
+                    margin: '0 auto'
                   }}
                 >
-                  <Icon size={32} />
+                  <Icon size={28} />
                 </motion.a>
               );
             })}
           </div>
-          <div style={{ marginTop: '4rem' }}>
+          <div style={{ marginTop: '2rem' }}>
             <a
               href={portfolioData.socials.find(s => s.name === 'Email')?.url}
               className="script-text transition-standard"
-              style={{ fontSize: '2rem', textDecoration: 'none', color: 'white', opacity: 0.8 }}
+              style={{ fontSize: '1.5rem', textDecoration: 'none', color: 'white', opacity: 0.8 }}
               onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
               onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
             >
               {portfolioData.socials.find(s => s.name === 'Email')?.url.replace('mailto:', '')}
             </a>
           </div>
-          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
+          <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center' }}>
             <p style={{ color: 'var(--text-secondary)' }}>
               📞 {portfolioData.contact.phone}
             </p>
