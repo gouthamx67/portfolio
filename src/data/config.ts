@@ -3,9 +3,9 @@ export const portfolioData = {
     role: "Full Stack Developer | AI Integration Specialist",
     bio: "Full-Stack Developer & AI Integration Specialist experienced in designing, building, and shipping web and AI-driven applications end-to-end. Focused on applied AI: integrating LLMs into real products, building Retrieval-Augmented Generation (RAG) pipelines, fine-tuning models for domain-specific behavior, and creating Agentic AI systems. Comfortable across both JavaScript/TypeScript and Python stacks, with a track record of turning research-stage AI ideas into working, user-facing features.",
     skills: {
-        "AI Technologies": ["Generative AI", "LLM Integration", "AI Automation", "Prompt Engineering", "RAG Systems", "Model Fine-Tuning", "Agentic AI"],
+        "AI Technologies": ["Generative AI", "LLM Integration", "AI Automation", "Prompt Engineering", "RAG Systems", "Model Fine-Tuning", "Agentic AI", "PyTorch", "TensorFlow", "OpenCV", "LangChain"],
         "Front-End Development": ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React.js", "Next.js", "Angular", "Redux", "Bootstrap"],
-        "Back-End Development": ["Node.js", "Express.js", "NestJS", "REST APIs", "WebSockets", "OAuth Authentication", "PHP"],
+        "Back-End Development": ["Node.js", "Express.js", "NestJS", "REST APIs", "WebSockets", "OAuth Authentication", "PHP", "Python"],
         "Tools & Platforms": ["GitHub", "Postman", "Docker", "Kubernetes", "Linux CLI", "Figma", "Cloudinary", "Vercel", "n8n", "Zapier"],
         "Databases & ORM": ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Prisma ORM"],
     },
