@@ -43,22 +43,6 @@ export const portfolioData = {
     projects: [
         {
             id: "1",
-            title: "STUVERSE",
-            description: "Stuverse is a full-stack MERN \"Campus Companion\" that centralizes university-only services like marketplace, ride sharing, lost & found, and real-time communication into one platform. 🚀",
-            image: "/stuverse.png",
-            link: "https://github.com/gouthamx67/Stuverse",
-            tags: ["React", "Node.js", "MongoDB", "Socket.io"],
-        },
-        {
-            id: "2",
-            title: "AI Gym Trainer",
-            description: "AI Gym Trainer corrects your workout form in real time using camera-based pose detection, and suggests personalized corrections to help you train safely and effectively.",
-            image: "/image.png",
-            link: "https://github.com/gouthamx67/ai-gym-trainer",
-            tags: ["AI", "Pose Detection", "Computer Vision"],
-        },
-        {
-            id: "3",
             title: "VisionIQ — Image Quality Analysis",
             description: "Built an image-quality analysis application that detects blur, motion blur, noise, compression artifacts, and exposure issues using a hierarchical ML pipeline. Implemented a two-stage Random Forest classification flow with independent computer-vision gates and final quality scoring; evaluated on 112 samples with 73.21% final accuracy.",
             image: "/image.png",
@@ -66,12 +50,20 @@ export const portfolioData = {
             tags: ["AI", "Machine Learning", "Computer Vision", "FastAPI", "React"],
         },
         {
-            id: "4",
+            id: "2",
             title: "Enterprise Research Intelligence — RAG Engine",
             description: "Built a modular document-ingestion and preprocessing foundation for enterprise research intelligence / RAG workflows. Implemented layout-aware PDF extraction with PyMuPDF, including page/block metadata and font, size, flags, and bounding-box information. Added conservative text normalization, artifact filtering, repeated header/footer classification, deduplication, and content hashing to improve downstream document quality.",
             image: "/stuverse.png",
             link: "https://github.com/gouthamx67/enterprise-rag",
             tags: ["AI", "RAG", "LLM", "PyMuPDF", "Python"],
+        },
+        {
+            id: "3",
+            title: "AI Gym Trainer",
+            description: "AI Gym Trainer corrects your workout form in real time using camera-based pose detection, and suggests personalized corrections to help you train safely and effectively.",
+            image: "/image.png",
+            link: "https://github.com/gouthamx67/ai-gym-trainer",
+            tags: ["AI", "Pose Detection", "Computer Vision"],
         },
     ],
 
