@@ -1,6 +1,6 @@
 export const portfolioData = {
     name: "Goutham",
-    role: "Full Stack Developer | AI Integration Specialist",
+    role: "Full Stack Developer | Applied AI Engineer",
     bio: "Full-Stack Developer & AI Integration Specialist experienced in designing, building, and shipping web and AI-driven applications end-to-end. Focused on applied AI: integrating LLMs into real products, building Retrieval-Augmented Generation (RAG) pipelines, fine-tuning models for domain-specific behavior, and creating Agentic AI systems. Comfortable across both JavaScript/TypeScript and Python stacks, with a track record of turning research-stage AI ideas into working, user-facing features.",
     skills: {
         "AI Technologies": ["Generative AI", "LLM Integration", "AI Automation", "Prompt Engineering", "RAG Systems", "Model Fine-Tuning", "Agentic AI", "PyTorch", "TensorFlow", "OpenCV", "LangChain"],
