@@ -189,7 +189,7 @@ export default function Hero({ name, role, bio }: { name: string; role: string; 
                             }}
                         >
                             <Image
-                                src="/image.png"
+                                src="/portrait.png"
                                 alt={`Portrait of ${name}`}
                                 width={400}
                                 height={400}
