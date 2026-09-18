@@ -3,11 +3,19 @@ export const portfolioData = {
     role: "Full Stack Developer | Applied AI Engineer",
     bio: "Full-Stack Developer & AI Integration Specialist experienced in designing, building, and shipping web and AI-driven applications end-to-end. Focused on applied AI: integrating LLMs into real products, building Retrieval-Augmented Generation (RAG) pipelines, fine-tuning models for domain-specific behavior, and creating Agentic AI systems. Comfortable across both JavaScript/TypeScript and Python stacks, with a track record of turning research-stage AI ideas into working, user-facing features.",
     skills: {
-        "AI Technologies": ["Generative AI", "LLM Integration", "AI Automation", "Prompt Engineering", "RAG Systems", "Model Fine-Tuning", "Agentic AI", "PyTorch", "TensorFlow", "OpenCV", "LangChain"],
-        "Front-End Development": ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React.js", "Next.js", "Angular", "Redux", "Bootstrap"],
-        "Back-End Development": ["Node.js", "Express.js", "NestJS", "REST APIs", "WebSockets", "OAuth Authentication", "PHP", "Python"],
-        "Tools & Platforms": ["GitHub", "Postman", "Docker", "Kubernetes", "Linux CLI", "Figma", "Cloudinary", "Vercel", "n8n", "Zapier"],
-        "Databases & ORM": ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Prisma ORM"],
+        core: {
+            "Full-Stack": ["JavaScript (ES6+)", "TypeScript", "React.js", "Next.js", "Node.js", "Express.js", "NestJS"],
+            "Applied AI · LLM": ["LLM Integration", "RAG Pipelines", "Agentic AI", "Model Fine-Tuning", "Prompt Engineering"],
+        },
+        stack: {
+            "Front-End": ["HTML5", "CSS3", "Redux", "Bootstrap", "Angular"],
+            "Back-End": ["REST APIs", "WebSockets", "OAuth Authentication", "Python", "PHP"],
+            "Databases & ORM": ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Prisma ORM"],
+        },
+        tools: {
+            "AI Libraries": ["LangChain", "PyTorch", "TensorFlow", "OpenCV", "Generative AI", "AI Automation", "n8n", "Zapier"],
+            "Platforms": ["GitHub", "Docker", "Kubernetes", "Linux CLI", "Figma", "Cloudinary", "Vercel", "Postman"],
+        },
     },
     education: [
         {
@@ -45,7 +53,7 @@ export const portfolioData = {
             id: "1",
             title: "VisionIQ — Image Quality Analysis",
             description: "Built an image-quality analysis application that detects blur, motion blur, noise, compression artifacts, and exposure issues using a hierarchical ML pipeline. Implemented a two-stage Random Forest classification flow with independent computer-vision gates and final quality scoring; evaluated on 112 samples with 73.21% final accuracy.",
-            image: "/image.png",
+            image: "/vision.png",
             link: "https://github.com/gouthamx67/visioniq",
             tags: ["AI", "Machine Learning", "Computer Vision", "FastAPI", "React"],
         },

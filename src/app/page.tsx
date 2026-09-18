@@ -6,12 +6,27 @@ import SectionHeading from "@/components/SectionHeading";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
-const iconMap: Record<string, React.ComponentType> = {
+function XIcon({ size = 24 }: { size?: number }) {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            stroke="none"
+            aria-hidden="true"
+        >
+            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+        </svg>
+    );
+}
+
+const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   Github: Github,
   Linkedin: Linkedin,
-  Twitter: Twitter,
+  Twitter: XIcon,
   Mail: Mail,
 };
 
@@ -29,29 +44,45 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="section-padding">
         <div className="container">
-          <SectionHeading title="Skills" subtitle="My Technical Expertise" />
+          <SectionHeading title="Skills" />
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-7xl mx-auto skills-grid"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '2.25rem' }}
           >
-            {Object.entries(portfolioData.skills).map(([category, skills]) => (
-              <div key={category} style={{ marginBottom: '2rem' }}>
-                <h3 style={{
-                  fontSize: '1rem',
-                  textTransform: 'uppercase',
-                  color: 'var(--text-secondary)',
-                  marginBottom: '0.5rem',
-                  letterSpacing: '0.1em',
-                  borderBottom: '1px solid var(--card-border)',
-                  paddingBottom: '0.5rem'
-                }}>
-                  {category}
-                </h3>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            {/* Core — the two pillars of the work */}
+            {Object.entries(portfolioData.skills.core).map(([group, skills]) => (
+              <div key={group} className="tier-block">
+                <span className="tier-label">{group}</span>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.7rem', flex: 1 }}>
                   {(skills as string[]).map((skill, index) => (
-                    <SkillBadge key={index} name={skill} />
+                    <SkillBadge key={index} name={skill} variant="core" />
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            {/* Supporting stack */}
+            {Object.entries(portfolioData.skills.stack).map(([group, skills]) => (
+              <div key={group} className="tier-block">
+                <span className="tier-label">{group}</span>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.7rem', flex: 1 }}>
+                  {(skills as string[]).map((skill, index) => (
+                    <SkillBadge key={index} name={skill} variant="core" />
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            {/* Tools */}
+            {Object.entries(portfolioData.skills.tools).map(([group, skills]) => (
+              <div key={group} className="tier-block">
+                <span className="tier-label">{group}</span>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.7rem', flex: 1 }}>
+                  {(skills as string[]).map((skill, index) => (
+                    <SkillBadge key={index} name={skill} variant="core" />
                   ))}
                 </div>
               </div>
@@ -63,7 +94,7 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="section-padding">
         <div className="container">
-          <SectionHeading title="Experience" subtitle="Where I've Worked" />
+          <SectionHeading title="Experience" />
           <div className="experience-list">
             {portfolioData.experience.map(exp => (
               <motion.div
@@ -96,7 +127,7 @@ export default function Home() {
       {/* Education Section */}
       <section id="education" className="section-padding">
         <div className="container">
-          <SectionHeading title="Education" subtitle="My Academic Journey" />
+          <SectionHeading title="Education" />
           <div className="education-list">
             {portfolioData.education.map(edu => (
               <motion.div
@@ -124,7 +155,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="section-padding">
         <div className="container">
-          <SectionHeading title="Selected Projects" subtitle="Building Digital Experiences" />
+          <SectionHeading title="Selected Work" />
           <div className="projects-grid">
             {portfolioData.projects.map(project => (
               <ProjectCard key={project.id} {...project} />
@@ -137,7 +168,7 @@ export default function Home() {
       {/* Blogs Section */}
       <section id="blogs" className="section-padding">
         <div className="container">
-          <SectionHeading title="Blogs" subtitle="Sharing My Thoughts" />
+          <SectionHeading title="Notes" />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {portfolioData.blogs.map(blog => (
               <motion.a
@@ -158,7 +189,7 @@ export default function Home() {
                 }}
               >
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Blog</span>
+                  <span style={{ color: 'var(--accent)', fontSize: '0.8rem', fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}>note/</span>
                   <h4 style={{ fontSize: '1.5rem', marginTop: '0.25rem', marginBottom: '0.25rem' }}>{blog.title}</h4>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', maxWidth: 'none' }}>{blog.excerpt}</p>
                 </div>
@@ -172,9 +203,9 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section-padding">
+      <section id="contact" className="section-padding" style={{ paddingBottom: 'var(--space-section)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <SectionHeading title="Get In Touch" subtitle="Let's Build Something Great" />
+          <SectionHeading title="Contact" />
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
             {portfolioData.socials.map(social => {
               const Icon = iconMap[social.icon] || Mail;
@@ -202,10 +233,16 @@ export default function Home() {
           <div style={{ marginTop: '1.5rem' }}>
             <a
               href={portfolioData.socials.find(s => s.name === 'Email')?.url}
-              className="script-text transition-standard"
-              style={{ fontSize: '1.25rem', textDecoration: 'none', color: 'white', opacity: 0.8 }}
+              className="transition-standard"
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '1.1rem',
+                textDecoration: 'none',
+                color: 'var(--accent)',
+                opacity: 0.85,
+              }}
               onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.85')}
             >
               {portfolioData.socials.find(s => s.name === 'Email')?.url.replace('mailto:', '')}
             </a>
@@ -229,7 +266,7 @@ export default function Home() {
         left: '-10%',
         width: '50vw',
         height: '50vw',
-        background: 'radial-gradient(circle, var(--glow-white) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(109,93,255,0.05) 0%, transparent 65%)',
         zIndex: -1,
         pointerEvents: 'none'
       }} />

@@ -39,19 +39,14 @@ export default function ProjectCard({ title, description, image, tags, link }: P
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="btn btn-ghost"
                     style={{
-                        display: 'inline-block',
                         width: 'fit-content',
+                        fontSize: '0.78rem',
                         padding: '0.6rem 1.2rem',
-                        borderRadius: '100px',
-                        background: 'white',
-                        color: 'black',
-                        fontWeight: 700,
-                        fontSize: '0.8rem',
-                        textTransform: 'uppercase'
                     }}
                 >
-                    View Project
+                    View project &rarr;
                 </a>
             </div>
         </motion.div>

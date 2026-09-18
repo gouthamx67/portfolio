@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GRK | Fullstack Developer & AI Enthusiast",
-  description: "Portfolio of Goutham - Fullstack Developer specializing in MongoDB, Node.js, React, and AI.",
+  title: "Goutham | Full-Stack Developer & Applied AI Engineer",
+  description: "Portfolio of Goutham — full-stack developer (MERN, TypeScript, Next.js, NestJS) building RAG pipelines, LLM fine-tuning, and agentic AI systems.",
 };
 
 export default function RootLayout({
