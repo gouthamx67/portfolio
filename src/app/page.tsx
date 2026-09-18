@@ -30,7 +30,12 @@ export default function Home() {
       <section id="skills" className="section-padding">
         <div className="container">
           <SectionHeading title="Skills" subtitle="My Technical Expertise" />
-          <div className="skills-grid">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="skills-grid"
+          >
             {Object.entries(portfolioData.skills).map(([category, skills]) => (
               <div key={category} style={{ marginBottom: '2rem' }}>
                 <h3 style={{
@@ -51,7 +56,7 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
