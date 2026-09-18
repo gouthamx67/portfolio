@@ -4,14 +4,14 @@ import Typewriter from "./Typewriter";
 
 export default function Hero({ name, role, bio }: { name: string, role: string, bio: string }) {
     return (
-        <section className="section-padding" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '10vh' }}>
-            <div className="container">
+        <section className="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
+            <div className="container relative z-10 text-center max-w-4xl px-4">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1 }}
                 >
-                    <span className="script-text" style={{ fontSize: '2rem', display: 'block', marginBottom: '1rem' }}>
+                    <span className="script-text text-2xl mb-4 block">
                         Hello, I am {name}
                     </span>
                     <h1 style={{ fontSize: 'clamp(3rem, 10vw, 7rem)', lineHeight: 1.1, marginBottom: '2rem' }}>

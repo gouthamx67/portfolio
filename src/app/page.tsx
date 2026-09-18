@@ -8,7 +8,7 @@ import SkillBadge from "@/components/SkillBadge";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail, ExternalLink } from "lucide-react";
 
-const iconMap: any = {
+const iconMap: Record<string, React.ComponentType> = {
   Github: Github,
   Linkedin: Linkedin,
   Twitter: Twitter,
@@ -34,17 +34,17 @@ export default function Home() {
             {Object.entries(portfolioData.skills).map(([category, skills]) => (
               <div key={category} style={{ marginBottom: '2rem' }}>
                 <h3 style={{
-                  fontSize: '1.2rem',
+                  fontSize: '1rem',
                   textTransform: 'uppercase',
                   color: 'var(--text-secondary)',
-                  marginBottom: '1rem',
+                  marginBottom: '0.5rem',
                   letterSpacing: '0.1em',
                   borderBottom: '1px solid var(--card-border)',
                   paddingBottom: '0.5rem'
                 }}>
                   {category}
                 </h3>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {(skills as string[]).map((skill, index) => (
                     <SkillBadge key={index} name={skill} />
                   ))}
@@ -68,18 +68,18 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="glass"
-                style={{ padding: '2rem', borderRadius: '16px', marginBottom: '2rem' }}
+                style={{ padding: '1.5rem', borderRadius: '12px', marginBottom: '1.5rem' }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '0.5rem' }}>
-                  <h3 style={{ fontSize: '1.6rem' }}>{exp.role}</h3>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{exp.period}</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontSize: '1.4rem' }}>{exp.role}</h3>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{exp.period}</span>
                 </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
                   {exp.company} | {exp.location}
                 </p>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingLeft: '1.25rem' }}>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingLeft: '1rem' }}>
                   {exp.highlights.map((highlight, i) => (
-                    <li key={i} style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{highlight}</li>
+                    <li key={i} style={{ color: 'var(--text-secondary)', lineHeight: 1.5 }}>{highlight}</li>
                   ))}
                 </ul>
               </motion.div>
@@ -101,11 +101,11 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="glass"
-                style={{ padding: '2rem', borderRadius: '16px', marginBottom: '2rem' }}
+                style={{ padding: '1.5rem', borderRadius: '12px', marginBottom: '1.5rem' }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '0.5rem' }}>
-                  <h3 style={{ fontSize: '1.6rem' }}>{edu.degree}</h3>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{edu.period}</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                  <h3 style={{ fontSize: '1.4rem' }}>{edu.degree}</h3>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{edu.period}</span>
                 </div>
                 <p style={{ color: 'var(--text-secondary)' }}>
                   {edu.school} | {edu.location}
@@ -133,7 +133,7 @@ export default function Home() {
       <section id="blogs" className="section-padding">
         <div className="container">
           <SectionHeading title="Blogs" subtitle="Sharing My Thoughts" />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {portfolioData.blogs.map(blog => (
               <motion.a
                 href={blog.link}
@@ -145,7 +145,7 @@ export default function Home() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '2rem',
+                  padding: '1.5rem',
                   borderBottom: '1px solid var(--card-border)',
                   borderRadius: '12px',
                   transition: 'background-color 0.3s ease',
@@ -153,12 +153,12 @@ export default function Home() {
                 }}
               >
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Blog</span>
-                  <h4 style={{ fontSize: '2rem', marginTop: '0.5rem', marginBottom: '0.5rem' }}>{blog.title}</h4>
-                  <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', fontSize: '1rem' }}>{blog.excerpt}</p>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Blog</span>
+                  <h4 style={{ fontSize: '1.5rem', marginTop: '0.25rem', marginBottom: '0.25rem' }}>{blog.title}</h4>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', maxWidth: 'none' }}>{blog.excerpt}</p>
                 </div>
-                <div className="glass" style={{ width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <ExternalLink size={20} />
+                <div className="glass" style={{ width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <ExternalLink/>
                 </div>
               </motion.a>
             ))}
@@ -170,7 +170,7 @@ export default function Home() {
       <section id="contact" className="section-padding">
         <div className="container" style={{ textAlign: 'center' }}>
           <SectionHeading title="Get In Touch" subtitle="Let's Build Something Great" />
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
             {portfolioData.socials.map(social => {
               const Icon = iconMap[social.icon] || Mail;
               return (
@@ -180,8 +180,8 @@ export default function Home() {
                   whileHover={{ y: -5, scale: 1.1 }}
                   className="glass"
                   style={{
-                    width: '60px',
-                    height: '60px',
+                    width: '48px',
+                    height: '48px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -189,16 +189,16 @@ export default function Home() {
                     margin: '0 auto'
                   }}
                 >
-                  <Icon size={28} />
+                  <Icon/>
                 </motion.a>
               );
             })}
           </div>
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ marginTop: '1.5rem' }}>
             <a
               href={portfolioData.socials.find(s => s.name === 'Email')?.url}
               className="script-text transition-standard"
-              style={{ fontSize: '1.5rem', textDecoration: 'none', color: 'white', opacity: 0.8 }}
+              style={{ fontSize: '1.25rem', textDecoration: 'none', color: 'white', opacity: 0.8 }}
               onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
               onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
             >
@@ -206,10 +206,10 @@ export default function Home() {
             </a>
           </div>
           <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center' }}>
-            <p style={{ color: 'var(--text-secondary)' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
               📞 {portfolioData.contact.phone}
             </p>
-            <p style={{ color: 'var(--text-secondary)' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
               📍 {portfolioData.contact.location}
             </p>
           </div>
